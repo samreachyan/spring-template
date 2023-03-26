@@ -24,12 +24,7 @@ public class UserService {
         return userRepository.findAll();
     }
 
-    public Optional<User> findUserById(int id) throws UserNotFoundException {
-        Optional<User> user = userRepository.findById(id);
-        if (user.isPresent()) {
-            return user;
-        } else {
-            throw new UserNotFoundException("Not found user id = " + id);
-        }
+    public Optional<User> findUserById(int id) {
+        return userRepository.findById(id);
     }
 }
