@@ -6,6 +6,8 @@ server:
 spring:
   banner:
     location: banner.txt
+  main:
+    banner-mode: console
 
   datasource:
 #    url: jdbc:h2:mem:testdb

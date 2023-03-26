@@ -9,12 +9,14 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.sakcode</groupId>
-    <artifactId>ValidateSpring</artifactId>
+    <artifactId>MyApplication</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>ValidateSpring</name>
-    <description>ValidateSpring</description>
+    <name>MyApplication</name>
+    <description>MyApplication</description>
     <properties>
-        <java.version>18</java.version>
+        <java.version>17</java.version>
+        <maven.compiler.target>17</maven.compiler.target>
+        <maven.compiler.source>17</maven.compiler.source>
     </properties>
     <dependencies>
         <dependency>
@@ -28,6 +30,10 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.thymeleaf</groupId>
+            <artifactId>thymeleaf</artifactId>
         </dependency>
 
         <dependency>
@@ -60,6 +66,10 @@
             <groupId>org.modelmapper</groupId>
             <artifactId>modelmapper</artifactId>
             <version>3.1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
 
     </dependencies>
