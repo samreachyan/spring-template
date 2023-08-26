@@ -1,8 +1,7 @@
-package com.sakcode.service;
+package com.sakcode.springtemplate.service;
 
-import com.sakcode.entity.User;
-import com.sakcode.repository.UserRepository;
-import com.sakcode.exception.UserNotFoundException;
+import com.sakcode.springtemplate.domain.User;
+import com.sakcode.springtemplate.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

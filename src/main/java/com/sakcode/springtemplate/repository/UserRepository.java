@@ -1,6 +1,6 @@
-package com.sakcode.repository;
+package com.sakcode.springtemplate.repository;
 
-import com.sakcode.entity.User;
+import com.sakcode.springtemplate.domain.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

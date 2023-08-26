@@ -1,4 +1,4 @@
-package com.sakcode.exception;
+package com.sakcode.springtemplate.exception;
 
 public class UserNotFoundException extends Exception {
 

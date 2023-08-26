@@ -1,7 +1,6 @@
-package com.sakcode.advice;
+package com.sakcode.springtemplate.exception;
 
-import com.sakcode.dto.response.ResponseBase;
-import com.sakcode.exception.UserNotFoundException;
+import com.sakcode.springtemplate.payload.response.BaseResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -16,12 +15,12 @@ public class RequestHandler {
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(MethodArgumentNotValidException.class)
-    public ResponseBase handleInvalidException(MethodArgumentNotValidException exception) {
+    public BaseResponse handleInvalidException(MethodArgumentNotValidException exception) {
         Map<String, String> errorMsg = new HashMap<>();
         exception.getBindingResult().getFieldErrors().forEach(fieldError -> {
             errorMsg.put(fieldError.getField(), fieldError.getDefaultMessage());
         });
-        return ResponseBase.builder()
+        return BaseResponse.builder()
                 .status(HttpStatus.BAD_REQUEST.value())
                 .message("Invalid request params")
                 .data(errorMsg)
@@ -30,10 +29,11 @@ public class RequestHandler {
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(UserNotFoundException.class)
-    public ResponseBase handleUserNotFound(UserNotFoundException exception) {
-        return ResponseBase.builder()
+    public BaseResponse handleUserNotFound(UserNotFoundException exception) {
+        return BaseResponse.builder()
                 .status(HttpStatus.BAD_REQUEST.value())
                 .message(exception.getMessage())
                 .build();
     }
 }
+
