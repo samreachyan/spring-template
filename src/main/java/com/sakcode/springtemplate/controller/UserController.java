@@ -14,6 +14,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/v1/user")
@@ -53,7 +54,11 @@ public class UserController {
 
     @GetMapping("/{id}")
     public ResponseEntity<?> findUserById(@PathVariable int id) throws UserNotFoundException {
-        return ResponseEntity.ok(userService.findUserById(id).orElseThrow(() -> new UserNotFoundException("User is not found = " + id)));
+        return ResponseEntity.ok(BaseResponse.builder()
+                .status(HttpStatus.OK.value())
+                .message("Success")
+                .data(userService.findUserById(id).orElseThrow(() -> new UserNotFoundException("User is not found = " + id)))
+                .build());
     }
 
 }
