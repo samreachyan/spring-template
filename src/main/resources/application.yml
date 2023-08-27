@@ -23,3 +23,6 @@ spring:
       hibernate:
         format_sql: false
         dialect: org.hibernate.dialect.MySQLDialect
+springdoc:
+  api-docs:
+    path: /swagger-ui.html

@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class BaseResponse<T> {
-    private Integer status;
-    private String message;
-    private T data;
+    public Integer status;
+    public String message;
+    public T data;
 }
